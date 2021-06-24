@@ -1,0 +1,28 @@
+{
+  "version": "2.0",
+  "envId": "{{env.ENV_ID}}",
+  "framework": {
+    "name": "Laverna",
+    "plugins": {
+      "client": {
+        "use": "@cloudbase/framework-plugin-container",
+        "inputs": {
+          "serviceName": "laverna",
+          "servicePath": "/",
+          "uploadType": "image",
+          "imageInfo": {
+            "imageUrl": "ccr.ccs.tencentyun.com/tcbimages/laverna-tcb:0.7.51"
+          },
+          "containerPort": 80,
+          "envVariables": {
+            "TCB_NOT_SHOW_CYNOS_DB": "${Outputs.laverna.Properties.InstanceId}"
+          },
+          "initialDelaySeconds": 10
+        }
+      }
+    },
+    "requirement": {
+      "addons": []
+    }
+  }
+}
