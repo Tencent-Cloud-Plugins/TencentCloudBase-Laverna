@@ -15,7 +15,6 @@
           },
           "containerPort": 80,
           "envVariables": {
-            "TCB_NOT_SHOW_CYNOS_DB": "${Outputs.laverna.Properties.InstanceId}"
           },
           "initialDelaySeconds": 10
         }
